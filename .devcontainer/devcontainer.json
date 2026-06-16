@@ -1,0 +1,24 @@
+{
+  "name": "Docker in Docker - Servidor de Pruebas TP4",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:1": {
+      "version": "latest",
+      "moby": true
+    }
+  },
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  },
+  
+  "postCreateCommand": "echo '=== Verificando estado de componentes ===' && docker --version && docker ps"
+}
